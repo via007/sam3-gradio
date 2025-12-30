@@ -22,25 +22,36 @@ git clone https://github.com/via007/sam3-gradio.git
 cd sam3-gradio
 ```
 
-### 2. Install dependencies
+### 2. Install SAM3
+
+Please refer to the official SAM3 repository for installation:
+
+- **GitHub**: <https://github.com/facebookresearch/sam3>
+- **Hugging Face**: <https://huggingface.co/facebook/sam3>
 
 ```bash
-pip install torch torchvision gradio pillow numpy opencv-python
-pip install sam3  # Install SAM3 library
+# Install SAM3 from GitHub
+pip install git+https://github.com/facebookresearch/sam3.git
 ```
 
 ### 3. Download the model
 
-Download the SAM3 model checkpoint and place it in the `model/` directory:
+Download the SAM3 model checkpoint from [Hugging Face](https://huggingface.co/facebook/sam3) and place it in the `model/` directory:
 
 ```
 model/
 └── sam3.pt
 ```
 
-> **Note**: The model file is not included in this repository due to its large size. Please download it from the official SAM3 repository.
+> **Note**: You need to agree to share your contact information on Hugging Face to access the model.
 
-### 4. Run the application
+### 4. Install other dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Run the application
 
 ```bash
 python gradio_app.py
@@ -74,11 +85,15 @@ The application will start at `http://localhost:10029`
 - Python 3.8+
 - PyTorch 2.0+
 - CUDA (recommended for GPU acceleration)
-- SAM3 library
 
 ## License
 
 MIT License
+
+## Acknowledgments
+
+- [SAM3](https://github.com/facebookresearch/sam3) by Meta AI
+- [Gradio](https://gradio.app/) for the web interface
 
 ---
 
@@ -112,25 +127,36 @@ git clone https://github.com/via007/sam3-gradio.git
 cd sam3-gradio
 ```
 
-### 2. 安装依赖
+### 2. 安装 SAM3
+
+请参考官方 SAM3 仓库进行安装：
+
+- **GitHub**: <https://github.com/facebookresearch/sam3>
+- **Hugging Face**: <https://huggingface.co/facebook/sam3>
 
 ```bash
-pip install torch torchvision gradio pillow numpy opencv-python
-pip install sam3  # 安装 SAM3 库
+# 从 GitHub 安装 SAM3
+pip install git+https://github.com/facebookresearch/sam3.git
 ```
 
 ### 3. 下载模型
 
-下载 SAM3 模型文件并放置在 `model/` 目录下：
+从 [Hugging Face](https://huggingface.co/facebook/sam3) 下载 SAM3 模型文件并放置在 `model/` 目录下：
 
 ```
 model/
 └── sam3.pt
 ```
 
-> **注意**：由于模型文件较大，本仓库不包含模型文件。请从 SAM3 官方仓库下载。
+> **注意**：你需要在 Hugging Face 上同意分享联系信息才能下载模型。
 
-### 4. 运行应用
+### 4. 安装其他依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. 运行应用
 
 ```bash
 python gradio_app.py
@@ -164,8 +190,12 @@ python gradio_app.py
 - Python 3.8+
 - PyTorch 2.0+
 - CUDA（推荐使用 GPU 加速）
-- SAM3 库
 
 ## 许可证
 
 MIT License
+
+## 致谢
+
+- [SAM3](https://github.com/facebookresearch/sam3) by Meta AI
+- [Gradio](https://gradio.app/) 用于 Web 界面
