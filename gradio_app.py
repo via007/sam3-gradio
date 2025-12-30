@@ -60,6 +60,9 @@ CHECKPOINT_NAME = "sam3.pt"
 OUTPUT_DIR = "./outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# 是否从 Hugging Face 加载模型（用于 HF Spaces 部署）
+LOAD_FROM_HF = os.environ.get("LOAD_FROM_HF", "true").lower() == "true"
+
 # 全局模型
 image_processor = None
 
@@ -85,16 +88,24 @@ def initialize_model():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"[INFO] Device: {device}")
     
+    # 检查是否有本地模型
     checkpoint_path = os.path.join(MODEL_PATH, CHECKPOINT_NAME)
-    if not os.path.exists(checkpoint_path):
-        raise FileNotFoundError(f"Model not found: {checkpoint_path}")
+    use_local = os.path.exists(checkpoint_path) and not LOAD_FROM_HF
     
-    print("[INFO] Loading SAM3 model...")
-    image_model = build_sam3_image_model(
-        checkpoint_path=checkpoint_path,
-        device=device,
-        load_from_HF=False
-    )
+    if use_local:
+        print(f"[INFO] Loading model from local: {checkpoint_path}")
+        image_model = build_sam3_image_model(
+            checkpoint_path=checkpoint_path,
+            device=device,
+            load_from_HF=False
+        )
+    else:
+        print("[INFO] Loading model from Hugging Face: facebook/sam3")
+        image_model = build_sam3_image_model(
+            device=device,
+            load_from_HF=True
+        )
+    
     image_processor = Sam3Processor(image_model)
     print("[OK] Model loaded!")
 
