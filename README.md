@@ -4,7 +4,22 @@
   <img src="demo.png" alt="Demo" width="100%">
 </p>
 
+<p align="center">
+  <a href="https://huggingface.co/spaces/viaho/sam3-gradio">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Online%20Demo-blue" alt="Hugging Face Demo">
+  </a>
+  <a href="https://github.com/via007/sam3-gradio">
+    <img src="https://img.shields.io/github/stars/via007/sam3-gradio?style=social" alt="GitHub Stars">
+  </a>
+</p>
+
 A simple and elegant image segmentation tool powered by **SAM3 (Segment Anything Model 3)**. Just upload an image and describe what you want to segment!
+
+## Try it Online
+
+**[Click here to try the online demo on Hugging Face Spaces](https://huggingface.co/spaces/viaho/sam3-gradio)**
+
+No installation required! Just upload an image and start segmenting.
 
 ## Features
 
@@ -109,7 +124,19 @@ MIT License
   <img src="demo.png" alt="演示" width="100%">
 </p>
 
+<p align="center">
+  <a href="https://huggingface.co/spaces/viaho/sam3-gradio">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-在线体验-blue" alt="Hugging Face Demo">
+  </a>
+</p>
+
 基于 **SAM3 (Segment Anything Model 3)** 的简洁优雅的图像分割工具。只需上传图片并描述你想分割的内容！
+
+## 在线体验
+
+**[点击这里在 Hugging Face Spaces 上在线体验](https://huggingface.co/spaces/viaho/sam3-gradio)**
+
+无需安装！上传图片即可开始分割。
 
 ## 功能特性
 
